@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Love cipher tool</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Love cipher tool</h1>
+      <p class="subtitle"><strong>From Huyz with luv </strong></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="field">
+        <label for="inputText">Your input message: </label>
+        <textarea id="inputText" placeholder="Your message..." rows="6"></textarea>
+      </div>
+
+      <div class="grid-2">
+        <div class="field">
+          <label>Choose your mode</label>
+          <div class="segmented">
+            <label class="seg-item">
+              <input type="radio" name="mode" value="encrypt" checked />
+              <span>Encrypt</span>
+            </label>
+            <label class="seg-item">
+              <input type="radio" name="mode" value="decrypt" />
+              <span>Decrypt</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="keyLetter">Your keyword (a–z)</label>
+          <input id="keyLetter" type="text" maxlength="1" placeholder="e.g: a" />
+        </div>
+        <div class="field">
+          <label>Keyword: </label>
+          <div id="keyInfo" class="key-info">Don't have any keyword yet.</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="runBtn" class="btn primary">Run</button>
+        <button id="clearBtn" class="btn">Delete</button>
+        <button id="copyBtn" class="btn">Copy your result</button>
+      </div>
+
+      <div class="field">
+        <label for="outputText">Result</label>
+        <textarea id="outputText" rows="6" readonly placeholder="Your result here..."></textarea>
+      </div>
+
+      <details class="note">
+        <summary>Advices for lovers</summary>
+        <ul>
+          <li>Love with your heart ^^</li>
+          <li>Dont make your partner hurt.</li>
+          <li>Take care and enjoy your life.</li>
+          <li>Tomorrow will be a better day.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2 class="card-title">Future tools...</h2>
+      <ol class="steps">
+        <li>In development stage...</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Love cipher. Made by Huyz with ❤️. </p>
+    </div>
+  </footer>
+</body>
+</html>
