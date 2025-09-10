@@ -100,6 +100,16 @@ body {
   color: white;
 }
 
+.checkbox-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  user-select: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.checkbox-inline input { transform: translateY(1px); }
+
 .actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .25rem; }
 .btn {
   appearance: none;
@@ -131,6 +141,17 @@ body {
 .note summary { cursor: pointer; }
 .steps { margin: 0; }
 .steps li { margin-bottom: .5rem; }
+
+/* Error box for advanced tool */
+.error-box {
+  margin-top: .5rem;
+  padding: .75rem .9rem;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #7f1d1d;
+  border: 1px solid #fecaca;
+  font-weight: 600;
+}
 
 @media (max-width: 720px) {
   .grid-2 { grid-template-columns: 1fr; }
