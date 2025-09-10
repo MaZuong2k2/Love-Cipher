@@ -12,15 +12,16 @@
   <header class="site-header">
     <div class="container">
       <h1>Love cipher tool</h1>
-      <p class="subtitle"><strong>From Huyz with luv </strong></p>
+      <p class="subtitle"><strong>From Huyz with luv</strong> — Love Cipher v2</p>
     </div>
   </header>
 
   <main class="container">
+    <!-- BASIC: Caesar 1-key (giữ để bạn test nhanh) -->
     <section class="card">
       <div class="field">
-        <label for="inputText">Your input message: </label>
-        <textarea id="inputText" placeholder="Your message..." rows="6"></textarea>
+        <label for="inputText">Your input message </label>
+        <textarea id="inputText" placeholder="Your message..." rows="5"></textarea>
       </div>
 
       <div class="grid-2">
@@ -43,7 +44,7 @@
           <input id="keyLetter" type="text" maxlength="1" placeholder="e.g: a" />
         </div>
         <div class="field">
-          <label>Keyword: </label>
+          <label>Keyword </label>
           <div id="keyInfo" class="key-info">Don't have any keyword yet.</div>
         </div>
       </div>
@@ -56,31 +57,100 @@
 
       <div class="field">
         <label for="outputText">Result</label>
-        <textarea id="outputText" rows="6" readonly placeholder="Your result here..."></textarea>
+        <textarea id="outputText" rows="5" readonly placeholder="Your result here..."></textarea>
       </div>
-
-      <details class="note">
-        <summary>Advices for lovers</summary>
-        <ul>
-          <li>Love with your heart ^^</li>
-          <li>Dont make your partner hurt.</li>
-          <li>Take care and enjoy your life.</li>
-          <li>Tomorrow will be a better day.</li>
-        </ul>
-      </details>
     </section>
 
-    <section class="card">
-      <h2 class="card-title">Future tools...</h2>
-      <ol class="steps">
-        <li>In development stage...</li>
-      </ol>
+    <!-- ADVANCED: multi-key + number sequence -->
+    <section class="card" id="advanced-tool">
+      <h2 class="card-title">Advanced love cipher (AI could not decipher this hehehe)</h2>
+
+      <div class="field">
+        <label>Mode</label>
+        <div class="segmented">
+          <label class="seg-item">
+            <input type="radio" name="advMode" value="encrypt" checked>
+            <span>Encrypt</span>
+          </label>
+          <label class="seg-item">
+            <input type="radio" name="advMode" value="decrypt">
+            <span>Decrypt</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- ENCRYPT PANEL -->
+      <div id="advEncryptPanel">
+        <div class="grid-2">
+          <div class="field">
+            <label for="advPlain">Your input message</label>
+            <textarea id="advPlain" rows="4" placeholder="Your message..."></textarea>
+          </div>
+          <div class="field">
+            <label for="advKey">Key 1 </label>
+            <input id="advKey" type="text" placeholder="e.g: vein" pattern="[A-Za-z]+" />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="advKey2">Key 2 </label>
+            <input id="advKey2" type="text" placeholder="e.g: 1234" pattern="[0-9]+" inputmode="numeric" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="advEncryptBtn" class="btn primary">Encrypt</button>
+          <button id="advClearEncBtn" class="btn">Clear</button>
+          <button id="advCopyEncBtn" class="btn">Copy</button>
+        </div>
+
+        <div class="field">
+          <label for="advNumberOut">Result </label>
+          <textarea id="advNumberOut" rows="4" readonly placeholder="Encrypted message..."></textarea>
+        </div>
+
+        <div id="advErrorEnc" class="error-box" hidden></div>
+      </div>
+
+      <!-- DECRYPT PANEL -->
+      <div id="advDecryptPanel" hidden>
+        <div class="grid-2">
+          <div class="field">
+            <label for="advNumbersIn">Your encrypted message </label>
+            <textarea id="advNumbersIn" rows="4" placeholder="Your message..."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="advKeyDec">Key 1 </label>
+            <input id="advKeyDec" type="text" placeholder="e.g: vein" pattern="[A-Za-z]+" />
+          </div>
+        </div>  
+        <div class="grid-2">
+          <div class="field">
+            <label for="advKey2Dec">Key 2 </label>
+            <input id="advKey2Dec" type="text" placeholder="e.g: 1234" pattern="[0-9]+" inputmode="numeric" />
+          </div>
+        </div>
+        <div class="actions">
+          <button id="advDecryptBtn" class="btn primary">Decrypt</button>
+          <button id="advClearDecBtn" class="btn">Clear</button>
+          <button id="advCopyDecBtn" class="btn">Copy</button>
+        </div>
+
+        <div class="field">
+          <label for="advPlainOut">Plaintext</label>
+          <textarea id="advPlainOut" rows="4" readonly placeholder="Decrypted message..."></textarea>
+        </div>
+
+        <div id="advErrorDec" class="error-box" hidden></div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Love cipher. Made by Huyz with ❤️. </p>
+      <p>© <span id="year"></span> Love cipher. Made by Huyz with ❤️.</p>
     </div>
   </footer>
 </body>
